@@ -1,0 +1,22 @@
+<p class="selector-p">
+  <i
+    class="material-icons selector-p__arrows"
+    (click)="changeCurrentMonth(-1)"
+  >
+    arrow_left
+  </i>
+
+  <span
+    class="selector-p__text"
+  >
+    {{ getDate() | async | moment }}
+  </span>
+
+  <i
+    class="material-icons selector-p__arrows"
+    (click)="changeCurrentMonth(1)"
+  >
+    arrow_right
+  </i>
+
+</p>

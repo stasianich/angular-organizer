@@ -1,0 +1,33 @@
+<table class="calendar">
+  <thead>
+    <tr>
+      <th class="calendar__header">Monday</th>
+      <th class="calendar__header">Tuesday</th>
+      <th class="calendar__header">Wednesday</th>
+      <th class="calendar__header">Thursday</th>
+      <th class="calendar__header">Friday</th>
+      <th class="calendar__header">Saturday</th>
+      <th class="calendar__header">Sunday</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr
+      *ngFor="let week of getCalendar()"
+    >
+      <td
+        *ngFor="let day of week.days"
+        [class.disabled]="day.disabled"
+        class="calendar__day"
+        (click)="!day.disabled && onSelect(day.value)"
+      >
+        <span
+          [class.selected]="day.selected"
+          [class.active]="day.active"
+        >
+          {{ day.value | moment:'ddd DD' }}
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

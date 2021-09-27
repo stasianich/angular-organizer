@@ -1,0 +1,63 @@
+<section class="organizer">
+  <header class="organizer__header">
+    Organizer:
+
+    <strong>
+      {{ getDate() | async | moment: 'DD MMMM YYYY' }}
+    </strong>
+
+    <hr>
+  </header>
+
+  <main class="organizer__todos-section">
+    <ul
+      *ngIf="todos.length; else noTodos"
+      class="todos-list"
+    >
+      <li
+        *ngFor="let todo of todos; let i = index"
+        class="todos-list__todo todo"
+      >
+        <span class="todo__description">
+          <strong>
+            {{ i + 1 }}
+          </strong>
+          {{ todo.title }}
+        </span>
+
+        <button
+          class="btn btn-primary"
+          (click)="removeTodo(todo)"
+        >
+          Remove
+        </button>
+      </li>
+    </ul>
+
+    <ng-template #noTodos>
+      <p class="text-center">
+        No todos yet...
+      </p>
+    </ng-template>
+  </main>
+
+  <footer class="organizer__add-todo-section">
+    <form
+      class="add-todo-form"
+      (ngSubmit)="addTodo()" [formGroup]="form"
+    >
+      <input
+        type="text"
+        formControlName="title"
+      >
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="form.invalid"
+      >
+        Add
+      </button>
+    </form>
+  </footer>
+</section>

@@ -5,6 +5,7 @@
 ### To deploy project on ghpages:
 * ng add angular-cli-ghpages
 * ng deploy --base-href=angular-organizer
+* [FULL INSTRUCTION](https://www.npmjs.com/package/angular-cli-ghpages)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 

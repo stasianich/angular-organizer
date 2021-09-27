@@ -2,6 +2,10 @@
 
 [DEMO](https://stasianich.github.io/angular-organizer/)
 
+### To deploy project on ghpages:
+* ng add angular-cli-ghpages
+* ng deploy --base-href=angular-organizer
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
 ## Development server
